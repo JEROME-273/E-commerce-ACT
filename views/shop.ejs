@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Untree.co">
+  <link rel="shortcut icon" href="favicon.png">
+
+  <meta name="description" content="" />
+  <meta name="keywords" content="bootstrap, bootstrap4" />
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="css/tiny-slider.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <title>Shop - Product List</title>
+</head>
+
+<body>
+    <%- include('shop_partials/nav') %>
+    <%- include('shop_partials/hero') %>
+
+    <div class="untree_co-section product-section before-footer-section">
+      <div class="container">
+          <div class="row">
+            <% products.forEach((product, index) => { %>
+              <div class="col-12 col-md-4 mb-4">
+                <a class="product-item" href="#">
+                  <img src="/uploads/<%= product.p_image %>" class="img-fluid product-thumbnail" alt="<%= product.p_name %>">
+                  <h3 class="product-title"><%= product.p_name %></h3>
+                  <p class="product-quantity">Stocks: <%= product.p_quantity %></p>
+                  <strong class="product-price">$<%= product.p_price %></strong>
+                  <span class="icon-cross" onclick="submitForm('add-to-cart-<%= product.p_id %>')">
+                    <img src="images/cross.svg" class="img-fluid" alt="Cross icon">
+                  </span>
+                  <form id="add-to-cart-<%= product.p_id %>" action="/add-to-cart" method="POST">
+                    <input type="hidden" name="productId" value="<%= product.p_id %>">
+                  </form>
+                </a>
+              </div>
+              <% if ((index + 1) % 3 === 0) { %>
+                </div><div class="row"> <!-- Start a new row after every 3 products -->
+              <% } %>
+            <% }) %>
+          </div>
+      </div>
+  </div>
+  
+    <%- include('shop_partials/footer') %>
+
+    <script>
+      function submitForm(formId) {
+        var form = document.getElementById(formId);
+        form.submit();
+        form.querySelector("button").disabled = true;
+      }
+    </script>
+    
+</body>
+</html>

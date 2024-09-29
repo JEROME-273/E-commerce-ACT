@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <title>Admin Home</title>
+</head>
+<body>
+
+<nav class="custom-navbar navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/homepage">Furni<span>.</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="/shop">Shop</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <h1 class="mb-4">Products</h1>
+  <% if (successMsg) { %>
+    <div class="alert alert-success"><%= successMsg %></div>
+  <% } %>
+  <% if (errorMsg) { %>
+    <div class="alert alert-danger"><%= errorMsg %></div>
+  <% } %>
+  <a href="/add-product" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Add Product</a>
+  <table class="table table-bordered">
+    <thead class="table-light">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Image</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% products.forEach(product => { %>
+        <tr>
+          <td><%= product.p_id %></td>
+          <td><%= product.p_name %></td>
+          <td><%= product.p_quantity %></td>
+          <td>$<%= product.p_price %></td>
+          <td><img src="<%= product.p_image %>" alt="<%= product.p_name %>" width="50"></td>
+          <td><%= product.p_description %></td>
+          <td>
+            <a href="/edit-product/<%= product.p_id %>" class="btn btn-warning btn-sm">Edit</a>
+            <a href="/delete-product/<%= product.p_id %>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?');">Delete</a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

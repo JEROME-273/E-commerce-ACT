@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <title>Add Product</title>
+</head>
+<body>
+
+<nav class="custom-navbar navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/homepage">Furni<span>.</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="/shop">Shop</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <h1 class="mb-4">Add Product</h1>
+  <form action="/add-product" method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+      <input type="text" name="p_name" class="form-control" placeholder="Product Name" required>
+    </div>
+    <div class="mb-3">
+      <input type="number" name="p_quantity" class="form-control" placeholder="Quantity" required>
+    </div>
+    <div class="mb-3">
+      <input type="number" name="p_price" class="form-control" placeholder="Price" required>
+    </div>
+    <div class="mb-3">
+      <input type="file" name="p_image" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <textarea name="p_description" class="form-control" placeholder="Description" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Save</button>
+    <a href="/" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back</a>
+  </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
