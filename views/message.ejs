@@ -12,4 +12,14 @@
 </div>
 <%- include('admin/mainContent') %>
 
+<!-- Content Section -->
+<div class="content">
+    <% messages.forEach(message => { %> <!-- Loop through users -->
+        <div class="card">
+            <p>Email: <%= message.email %></p> <!-- Display email -->   
+            <p>Message: <%= message.message %></p> <!-- Display message -->  
+        </div>
+    <% }); %>
+</div>
+
 <%- include('admin/end') %>

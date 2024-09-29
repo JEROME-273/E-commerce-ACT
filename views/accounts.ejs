@@ -1,7 +1,7 @@
 <%- include('admin/start') %>
 
 <div class="sidebar">
-    <h2>admin</h2>
+    <h2>Admin</h2>
     <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/products">Products</a></li>
@@ -11,5 +11,17 @@
     </ul>
 </div>
 <%- include('admin/mainContent') %>
+
+<!-- Content Section -->
+<div class="content">
+    <% users.forEach(user => { %> <!-- Loop through users -->
+        <div class="card">
+            <h3>Username: <%= user.username %></h3> <!-- Display username -->
+            <p>Gender: <%= user.gender %></p> <!-- Display gender -->
+            <p>Email: <%= user.email %></p> <!-- Display email -->
+            <p>Role: <%= user.role %></p> <!-- Display role -->
+        </div>
+    <% }); %>
+</div>
 
 <%- include('admin/end') %>

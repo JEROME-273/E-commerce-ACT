@@ -11,4 +11,21 @@
 </div>
 <%- include('admin/mainContent') %>
 
+<!-- Content Section -->
+<div class="content">
+    <% orders.forEach(order => { %> <!-- Loop through users -->
+        <div class="card">
+            <p>Id: <%= order.O_id %> </p>
+            <p>Place on: <%= order.O_order_AT %> </p>
+            <p>Name: <%= order.name %> </p>
+            <p>Email: <%= order.email %> </p> <!-- Display email --> 
+            <p>Address: <%= order.address %> </p>   
+            <p>Total Products: <%= order.total_products %> </p>
+            <p>Total Price: <%= order.total_price %> </p>
+            <p>Payment Status: <%= order.payment_status %> </p>
+            
+        </div>
+    <% }); %>
+</div>
+
 <%- include('admin/end') %>

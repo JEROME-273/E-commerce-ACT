@@ -13,5 +13,52 @@
 
 <%- include('admin/mainContent') %>
 
+<!-- Content Section -->
+<div class="content">
+    <div class="product-container">
+        <div class="card">
+            <h3>Add a New Product</h3>
+            <!-- Form for adding a new product -->
+            <form action="/save" method="POST" enctype="multipart/form-data">
+                <!-- Product Name -->
+                <label for="name">Product Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter product name" required>
+                
+                <!-- Product Description -->
+                <label for="description">Description</label>
+                <input type="text" id="description" name="description" placeholder="Enter product description" required>
+
+                <!-- Product Price -->
+                <label for="price">Price</label>
+                <input type="number" id="price" name="price" placeholder="Enter product price" required>
+
+                <!-- Product Quantity -->
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" name="quantity" placeholder="Enter product quantity" required>
+
+                <!-- Product Image -->
+                <label for="pictures">Upload Image</label>
+                <input type="file" name="pictures" id="pictures" accept="image/*">
+
+                <!-- Submit Button -->
+                <input type="submit" value="Save">
+            </form>
+        </div>
+    </div>
+
+    <!-- Section to display all products -->
+    <h3>Available Products</h3>
+    <div class="product-list">
+        <% products.forEach(product => { %> <!-- Loop through products -->
+            <div class="card">
+                <p><strong>Name:</strong> <%= product.p_name %></p> <!-- Display product name -->
+                <p><strong>Quantity:</strong> <%= product.p_quantity %></p> <!-- Display product quantity -->   
+                <p><strong>Price:</strong> $<%= product.p_price %></p> <!-- Display product price -->     
+                <p><strong>Image:</strong> <img src="<%= product.p_image %>" alt="<%= product.p_name %>" style="width:100px;height:100px;"> </p> <!-- Display product image -->
+                <p><strong>Description:</strong> <%= product.p_description %></p> <!-- Display product description -->   
+            </div>
+        <% }); %>
+    </div>
+</div>
 
 <%- include('admin/end') %>

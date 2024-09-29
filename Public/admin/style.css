@@ -11,7 +11,7 @@ body, html {
 
 /* Sidebar Styling */
 .sidebar {
-    width: 200px;
+    width: 280px;
     background-color: #fff;
     border-right: 1px solid #ddd;
     padding: 20px;
@@ -19,10 +19,9 @@ body, html {
 }
 
 .sidebar h2 {
-    font-size: 40px;
+    font-size: 35px;
     color: #000;
     margin-bottom: 20px;
-    padding-top: 10px;
 }
 
 .sidebar ul {
@@ -31,14 +30,16 @@ body, html {
 }
 
 .sidebar ul li {
-    margin: 10px 0;
+    margin: 15px 0;
     padding-top: 40px;
 }
 
 .sidebar ul li a {
     text-decoration: none;
     color: #000;
-    font-size: 18px;
+    font-size: 28px;
+    padding: 10px;
+    display: block;
 }
 
 .sidebar ul li a:hover,
@@ -46,58 +47,83 @@ body, html {
     color: #ffd700;
     border-left: 4px solid #ffd700;
     padding-left: 8px;
-    font-size: 30px;
+    font-size: 40px;
 }
 
 /* Main Content Styling */
 .main-content {
     flex: 1;
     background-color: #f0f0f0;
-    display: flex;
-    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
+/* Header Styling */
 .header {
     background-color: #375845;
     color: #fff;
-    padding: 45px;
+    padding: 20px;
     display: flex;
     align-items: center;
-    position: relative;
-}
-
-/* User Icon Styling */
-.header .user-icon {
-    width: 50px;
-    height: 50px;
-    background-color: #d1d1d1;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #333;
-    font-size: 14px;
-    position: absolute; /* Position the user icon absolutely within the header */
-    top: 20px; /* Align it with the top padding of the header */
-    right: 20px; /* Align it with the right padding of the header */
+    justify-content: space-between;
 }
 
 /* Content Section Styling */
 .content {
-    flex: 1;
-    padding: 10px;
-    background-color: #dcdcdc;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 36px;
-    color: #333;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
+/* Product Form Section */
+.product-container {
+    width: 50%; /* Keep the form's original width */
+    margin-bottom: 20px;
+}
 
-.card {
-    width: 150px;
-    height: 150px;
-    background-color: #ffcc00;
-    border-radius: 20px;
+.product-container .card {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-container form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.product-container form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Product List Section */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-list .card {
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-list .card p {
+    margin: 5px 0;
+    text-align: center;
+}
+
+.product-list .card img {
+    border-radius: 8px;
 }
