@@ -53,7 +53,6 @@
           <td><%= product.p_quantity %></td>
           <td>$<%= product.p_price %></td>
           <td><img src="<%= product.p_image %>" alt="<%= product.p_name %>" width="50"></td>
-          <td><%= product.p_description %></td>
           <td>
             <a href="/edit-product/<%= product.p_id %>" class="btn btn-warning btn-sm">Edit</a>
             <a href="/delete-product/<%= product.p_id %>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?');">Delete</a>

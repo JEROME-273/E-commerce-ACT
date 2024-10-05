@@ -1,20 +1,47 @@
 const db = require('../config/db');
 
 const Product = {
-    getAll: (callback) => {
-        db.query('SELECT * FROM Products', callback);
+    getAll: async () => {
+        try {
+            const [rows] = await db.query('SELECT * FROM products');
+            return rows; 
+        } catch (error) {
+            console.error('Error fetching all products:', error);
+            throw error;
+        }
     },
-    add: (product, callback) => {
-        db.query('INSERT INTO Products SET ?', product, callback);
+    add: async (product) => {
+        try {
+            await db.query('INSERT INTO products SET ?', product);
+        } catch (error) {
+            console.error('Error adding product:', error);
+            throw error; 
+        }
     },
-    getById: (p_id, callback) => {
-        db.query('SELECT * FROM Products WHERE p_id = ?', [p_id], callback); // Ensure you're using p_id
+    getById: async (p_id) => {
+        try {
+            const [rows] = await db.query('SELECT * FROM products WHERE p_id = ?', [p_id]);
+            return rows[0]; 
+        } catch (error) {
+            console.error('Error fetching product by ID:', error);
+            throw error; 
+        }
     },
-    update: (p_id, product, callback) => {
-        db.query('UPDATE Products SET ? WHERE p_id = ?', [product, p_id], callback); // Ensure you're using p_id
+    update: async (p_id, product) => {
+        try {
+            await db.query('UPDATE products SET ? WHERE p_id = ?', [product, p_id]);
+        } catch (error) {
+            console.error('Error updating product:', error);
+            throw error;
+        }
     },
-    delete: (p_id, callback) => {
-        db.query('DELETE FROM Products WHERE p_id = ?', [p_id], callback); // Ensure you're using p_id
+    delete: async (p_id) => {
+        try {
+            await db.query('DELETE FROM products WHERE p_id = ?', [p_id]);
+        } catch (error) {
+            console.error('Error deleting product:', error);
+            throw error; 
+        }
     },
 };
 
