@@ -1,0 +1,80 @@
+<%- include('userpage/start') %>
+
+<!-- Start Header/Navigation -->
+<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+
+    <div class="container">
+        <a class="navbar-brand" href="/userIndex">Furni<span>.</span></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsFurni">
+            <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/userIndex">Home</a>
+                </li>
+                <li class="active"><a class="nav-link" href="/userShop">Shop</a></li>
+                <li><a class="nav-link" href="/userAboutUs">About us</a></li>
+                <li><a class="nav-link" href="/userService">Services</a></li>
+                <li><a class="nav-link" href="/userBlog">Blog</a></li>
+                <li><a class="nav-link" href="/userContact">Contact us</a></li>
+            </ul>
+
+            <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+                <li><a class="nav-link" href="#"><img src="../users/images/user.svg"></a></li>
+                <li><a class="nav-link" href="/userCart"><img src="../users/images/cart.svg"></a></li>
+            </ul>
+        </div>
+    </div>
+        
+</nav>
+<!-- End Header/Navigation -->
+
+<!-- Start Hero Section -->
+<div class="hero">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-5">
+                <div class="intro-excerpt">
+                    <h1>Shop</h1>
+                </div>
+            </div>
+            <div class="col-lg-7"></div>
+        </div>
+    </div>
+</div>
+<!-- End Hero Section -->
+
+<!-- Start Product Section -->
+<div class="untree_co-section product-section before-footer-section">
+    <div class="container">
+        <div class="row">
+            <!-- Loop through Products and Display Each -->
+            <% products.forEach(product => { %>
+                <div class="col-12 col-md-4 col-lg-3 mb-5">
+                    <a class="product-item" href="#">
+                        <!-- Product Image -->
+                        <img src="<%= product.p_image %>" class="img-fluid product-thumbnail" alt="<%= product.p_name %>">
+
+                        <!-- Product Title -->
+                        <h3 class="product-title"><%= product.p_name %></h3>
+
+                        <!-- Product Price -->
+                        <strong class="product-price">$<%= product.p_price %></strong>
+
+                        <!-- Additional Icon -->
+                        <span class="icon-cross">
+                            <img src="../users/images/cross.svg" class="img-fluid">
+                        </span>
+                    </a>
+                </div>
+            <% }); %>
+            <!-- End Product Loop -->
+        </div>
+    </div>
+</div>
+<!-- End Product Section -->
+
+<%- include('userpage/footer') %>

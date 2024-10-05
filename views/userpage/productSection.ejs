@@ -1,0 +1,44 @@
+<!-- Start Product Section -->
+<div class="product-section">
+    <div class="container">
+        <div class="row">
+
+            <!-- Start Column 1 -->
+            <div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
+                <h2 class="mb-4 section-title">Crafted with excellent material.</h2>
+                <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. </p>
+                <p><a href="/userShop" class="btn">Explore</a></p>
+            </div>
+            <!-- End Column 1 -->
+
+            <!-- Loop through Products and Display Them -->
+                <% products.forEach(product => { %>
+                    <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+                        <!-- Product Item with Form -->
+                        <form action="/addToCart" method="POST">
+                            <a class="product-item">
+                                <!-- Product Image -->
+                                <img src="<%= product.p_image %>" class="img-fluid product-thumbnail" alt="<%= product.p_name %>">
+                                
+                                <!-- Product Title and Price -->
+                                <h3 class="product-title"><%= product.p_name %></h3>
+                                <strong class="product-price">$<%= product.p_price %></strong>
+                                
+                                <!-- Hidden Inputs to Pass Data -->
+                                <input type="hidden" name="productId" value="<%= product.p_id %>">
+                                <input type="hidden" name="productName" value="<%= product.p_name %>">
+                                <input type="hidden" name="productPrice" value="<%= product.p_price %>">
+                                <input type="hidden" name="productImage" value="<%= product.p_image %>">
+                                
+                                <!-- Submit Button -->
+                                <button type="submit" class="btn btn-primary mt-2">Add to Cart</button>
+                            </a>
+                        </form>
+                    </div>
+                <% }); %>
+            <!-- End Product Loop -->
+
+        </div>
+    </div>
+</div>
+<!-- End Product Section -->

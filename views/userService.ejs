@@ -1,0 +1,133 @@
+<%- include('userpage/start') %>
+
+<!-- Start Header/Navigation -->
+<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+
+    <div class="container">
+        <a class="navbar-brand" href="/userIndex">Furni<span>.</span></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsFurni">
+            <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+                <li class="nav-item ">
+                    <a class="nav-link" href="/userIndex">Home</a>
+                </li>
+                <li><a class="nav-link" href="/userShop">Shop</a></li>
+                <li><a class="nav-link" href="/userAboutUs">About us</a></li>
+                <li class="active"><a class="nav-link" href="/userService">Services</a></li>
+                <li><a class="nav-link" href="/userBlog">Blog</a></li>
+                <li><a class="nav-link" href="/userContact">Contact us</a></li>
+            </ul>
+
+            <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+                <li><a class="nav-link" href="#"><img src="../users/images/user.svg"></a></li>
+                <li><a class="nav-link" href="/UserCart"><img src="../users/images/cart.svg"></a></li>
+            </ul>
+        </div>
+    </div>
+        
+</nav>
+<!-- End Header/Navigation -->
+
+<%- include('userpage/hero') %>
+
+<!-- Start Why Choose Us Section -->
+<div class="why-choose-section">
+    <div class="container">
+        
+        
+        <div class="row my-5">
+            <div class="col-6 col-md-6 col-lg-3 mb-4">
+                <div class="feature">
+                    <div class="icon">
+                        <img src="../users/images/truck.svg" alt="Image" class="imf-fluid">
+                    </div>
+                    <h3>Fast &amp; Free Shipping</h3>
+                    <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-6 col-lg-3 mb-4">
+                <div class="feature">
+                    <div class="icon">
+                        <img src="../users/images/bag.svg" alt="Image" class="imf-fluid">
+                    </div>
+                    <h3>Easy to Shop</h3>
+                    <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-6 col-lg-3 mb-4">
+                <div class="feature">
+                    <div class="icon">
+                        <img src="../users/images/support.svg" alt="Image" class="imf-fluid">
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-6 col-lg-3 mb-4">
+                <div class="feature">
+                    <div class="icon">
+                        <img src="../users/images/return.svg" alt="Image" class="imf-fluid">
+                    </div>
+                    <h3>Hassle Free Returns</h3>
+                    <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-6 col-lg-3 mb-4">
+                <div class="feature">
+                    <div class="icon">
+                        <img src="../users/images/truck.svg" alt="Image" class="imf-fluid">
+                    </div>
+                    <h3>Fast &amp; Free Shipping</h3>
+                    <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-6 col-lg-3 mb-4">
+                <div class="feature">
+                    <div class="icon">
+                        <img src="../users/images/bag.svg" alt="Image" class="imf-fluid">
+                    </div>
+                    <h3>Easy to Shop</h3>
+                    <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-6 col-lg-3 mb-4">
+                <div class="feature">
+                    <div class="icon">
+                        <img src="../users/images/support.svg" alt="Image" class="imf-fluid">
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-6 col-lg-3 mb-4">
+                <div class="feature">
+                    <div class="icon">
+                        <img src="../users/images/return.svg" alt="Image" class="imf-fluid">
+                    </div>
+                    <h3>Hassle Free Returns</h3>
+                    <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
+                </div>
+            </div>
+
+        </div>
+    
+    </div>
+</div>
+<!-- End Why Choose Us Section -->
+
+<%- include('userpage/productSection', { products: products }) %>
+
+<%- include('userpage/testimonial') %>
+<%- include('userpage/footer') %>
+
